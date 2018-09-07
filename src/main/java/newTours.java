@@ -2,6 +2,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.TimeoutException;
 
 public class newTours {
     public static void main(String[] args) {
@@ -12,17 +16,23 @@ public class newTours {
         // Create new instance of ChromeDriver
         WebDriver driver = new ChromeDriver();
 
-        // And now use this to visit Google
-        driver.get("http://www.google.com");
+        // And now use this to visit Mercury Tours website
+        driver.get("http://newtours.demoaut.com");
 
-        // Find the text input element by its name
-        WebElement element = driver.findElement(By.name("q"));
+        // Wait Home page appears
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
-        // Enter something to search for
-        element.sendKeys("Cheese!");
+        // Enter User Name
+        driver.findElement(By.name("userName")).sendKeys("mercury");
 
-        // Now submit the form
-        element.submit();
+        // Enter Password
+        driver.findElement(By.name("password")).sendKeys("mercury");
+
+        // Click on Sign-In
+        driver.findElement(By.name("login")).click();
+
+        // Wait Flight Finder page appears
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("findFlights")));
 
         // Close the browser
         //driver.quit();
