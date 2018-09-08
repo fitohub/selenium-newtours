@@ -125,7 +125,7 @@ public class newTours {
         driver.findElement(By.name("passFirst1")).sendKeys("Firstname2");
 
         // Enter 2nd passenger Last Name
-        driver.findElement(By.name("passFirst1")).sendKeys("Firstname2");
+        driver.findElement(By.name("passLast1")).sendKeys("Lastname2");
 
         // Select 2nd passenger Meal
         new Select(driver.findElement(By.name("pass.1.meal"))).selectByVisibleText("Low Calorie");
@@ -218,9 +218,21 @@ public class newTours {
 
 
         // Click SECURE PURCHASE button
-        //driver.findElement(By.name("buyFlights")).click();
+        driver.findElement(By.name("buyFlights")).click();
+
+
+        // --- FLIGHT CONFIRMATION --- //
+
+        // Wait FLIGHT CONFIRMATION page appears
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[src='/images/forms/Logout.gif']")));
+
+        // Click LOG OUT button
+        driver.findElement(By.cssSelector("img[src='/images/forms/Logout.gif']")).click();
+
+
+        // --- HOME --- //
 
         // Close the browser
-        //driver.quit();
+        driver.quit();
     }
 }
