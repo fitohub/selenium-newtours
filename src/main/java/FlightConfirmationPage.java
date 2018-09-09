@@ -1,3 +1,9 @@
+/* ****************************************************************************
+ * Fernando Ito - 09/07/2018
+ * FlightConfirmationPage.java - Get confirmation and check expected results.
+ * v1.0
+ ******************************************************************************/
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,5 +19,7 @@ public class FlightConfirmationPage {
         String confirmationText = confirmation.getText();
 
         assertEquals("Your itinerary has been booked!", confirmationText);
+
+        System.out.println(confirmationText);
     }
 }

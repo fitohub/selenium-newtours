@@ -1,3 +1,9 @@
+/* ****************************************************************************
+ * Fernando Ito - 09/07/2018
+ * FlightFinderPage.java - set roundtrip flight information for 2 people.
+ * v1.0
+ ******************************************************************************/
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;

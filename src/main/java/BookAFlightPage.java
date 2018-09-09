@@ -1,3 +1,9 @@
+/* ****************************************************************************
+ * Fernando Ito - 09/07/2018
+ * BookAFlightPage.java - set passengers and payment information.
+ * v1.0
+ ******************************************************************************/
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

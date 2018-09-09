@@ -1,3 +1,9 @@
+/* ****************************************************************************
+ * Fernando Ito - 09/07/2018
+ * SelectFlightPage.java - displays availability flights for departure/return.
+ * v1.0
+ ******************************************************************************/
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
