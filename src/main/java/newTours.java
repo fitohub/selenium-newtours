@@ -100,7 +100,7 @@ public class newTours {
 
         // Get confirmation text and check if is valid
         flightConfirmationPage.flightConfirmation(wait);
-        
+
 
         // Click LOG OUT button
         driver.findElement(By.cssSelector("img[src='/images/forms/Logout.gif']")).click();
