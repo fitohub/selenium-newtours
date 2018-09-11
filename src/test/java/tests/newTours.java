@@ -1,8 +1,10 @@
 /* ****************************************************************************
  * Fernando Ito - 09/07/2018
- * newTours.java - main class.
+ * tests.newTours.java - main class.
  * v1.0
  ******************************************************************************/
+
+package tests;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +12,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class newTours {
+
+    // Global test data Excel file
+    public static final String testDataExcelFileName = "testdata.xlsx";
+
     public static void main(String[] args) {
 
         // Set the property for webdriver.chrome.driver to be the location to your local download of chromeDriver
@@ -26,10 +32,10 @@ public class newTours {
         // Wait Home page appears
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
-        HomePage homePage = new HomePage();
+        HomeTest homeTest = new HomeTest();
 
         // --- HOME - Login ------------------------------------------------ //
-        homePage.homeLogin(driver);
+        homeTest.homeLogin(driver);
 
         // Click on Sign-In
         driver.findElement(By.name("login")).click();
@@ -40,13 +46,13 @@ public class newTours {
         // Wait Flight Finder page appears
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("findFlights")));
 
-        FlightFinderPage flightFinderPage = new FlightFinderPage();
+        FlightFinderTest flightFinderTest = new FlightFinderTest();
 
         // --- FLIGHT FINDER - Flight Details --- //
-        flightFinderPage.flightDetails(driver);
+        flightFinderTest.flightDetails(driver);
 
         // --- FLIGHT FINDER - Preferences --- //
-        flightFinderPage.flightPreferences(driver);
+        flightFinderTest.flightPreferences(driver);
 
         // Click Continue button
         driver.findElement(By.name("findFlights")).click();
@@ -57,13 +63,13 @@ public class newTours {
         // Wait SELECT FLIGHT page appears
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("reserveFlights")));
 
-        SelectFlightPage selectFlightPage = new SelectFlightPage();
+        SelectFlightTest selectFlightTest = new SelectFlightTest();
 
         // --- SELECT FLIGHT - Departure --- //
-        selectFlightPage.selectFlightDeparture(driver);
+        selectFlightTest.selectFlightDeparture(driver);
 
         // --- SELECT FLIGHT - Return --- //
-        selectFlightPage.selectFlightReturn(driver);
+        selectFlightTest.selectFlightReturn(driver);
 
 
         // Click Continue button
@@ -75,19 +81,19 @@ public class newTours {
         // Wait BOOK A FLIGHT page appears
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("buyFlights")));
 
-        BookAFlightPage bookAFlightPage = new BookAFlightPage();
+        BookAFlightTest bookAFlightTest = new BookAFlightTest();
 
         // --- BOOK A FLIGHT - Passengers --- //
-        bookAFlightPage.bookAFlightPassengers(driver);
+        bookAFlightTest.bookAFlightPassengers(driver);
 
         // --- BOOK A FLIGHT - Credit Card --- //
-        bookAFlightPage.bookAFlightCreditCard(driver);
+        bookAFlightTest.bookAFlightCreditCard(driver);
 
         // --- BOOK A FLIGHT - Billing Address --- //
-        bookAFlightPage.bookAFlightBillingAddress(driver);
+        bookAFlightTest.bookAFlightBillingAddress(driver);
 
         // --- BOOK A FLIGHT - Delivery Address --- //
-        bookAFlightPage.bookAFlightDeliveryAddress(driver);
+        bookAFlightTest.bookAFlightDeliveryAddress(driver);
 
         // Click SECURE PURCHASE button
         driver.findElement(By.name("buyFlights")).click();
@@ -98,7 +104,7 @@ public class newTours {
         // Wait FLIGHT CONFIRMATION page appears
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[src='/images/forms/Logout.gif']")));
 
-        FlightConfirmationPage flightConfirmationPage = new FlightConfirmationPage();
+        FlightConfirmationTest flightConfirmationPage = new FlightConfirmationTest();
 
         // Get confirmation text and check if is valid
         flightConfirmationPage.flightConfirmation(wait);
@@ -109,6 +115,7 @@ public class newTours {
 
         // Close the browser
         driver.quit();
+
     }
 
 }

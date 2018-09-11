@@ -1,8 +1,10 @@
 /* ****************************************************************************
  * Fernando Ito - 09/07/2018
- * FlightConfirmationPage.java - Get confirmation and check expected results.
+ * tests.FlightConfirmationTest.java - Get confirmation and check expected results.
  * v1.0
  ******************************************************************************/
+
+package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.assertEquals;
 
-public class FlightConfirmationPage {
+public class FlightConfirmationTest {
 
     public static void flightConfirmation(WebDriverWait wait) {
 

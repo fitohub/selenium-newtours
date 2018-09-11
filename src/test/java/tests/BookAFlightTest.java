@@ -1,8 +1,10 @@
 /* ****************************************************************************
  * Fernando Ito - 09/07/2018
- * BookAFlightPage.java - set passengers and payment information.
+ * tests.BookAFlightTest.java - set passengers and payment information.
  * v1.0
  ******************************************************************************/
+
+package tests;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -13,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class BookAFlightPage {
+public class BookAFlightTest {
 
     public static void bookAFlightPassengers(WebDriver driver) {
 

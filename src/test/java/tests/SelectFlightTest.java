@@ -1,8 +1,10 @@
 /* ****************************************************************************
  * Fernando Ito - 09/07/2018
- * SelectFlightPage.java - displays availability flights for departure/return.
+ * tests.SelectFlightTest.java - displays availability flights for departure/return.
  * v1.0
  ******************************************************************************/
+
+package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +12,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class SelectFlightPage {
+public class SelectFlightTest {
 
     public static void selectFlightDeparture(WebDriver driver) {
 
