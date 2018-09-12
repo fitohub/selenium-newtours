@@ -10,7 +10,15 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class newTours {
 
@@ -31,16 +39,17 @@ public class newTours {
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         // Create an object of HomeTest class
-        HomeTest objExcelFile = new HomeTest();
+        //HomeTest objExcelFile = new HomeTest();
 
         // Prepare the path of Excel file
 
         String filePath = System.getProperty("user.dir") + "/src/test/java/resources";
         String fileName = "testdata.xlsx";
-        String sheetName = "HomeData";
+        String sheetName = "newTours";
 
         // Call read file method of the class to read data
-        objExcelFile.readExcel(filePath, fileName, sheetName);
+        //objExcelFile.readExcel(filePath, fileName, sheetName);
+        readExcel(filePath, fileName, sheetName);
 
         HomeTest homeTest = new HomeTest();
 
@@ -127,7 +136,7 @@ public class newTours {
         driver.quit();
 
     }
-/*
+
     public static void readExcel(String filePath, String fileName, String sheetName) throws IOException {
 
         // Create an object of File class to open xlsx file
@@ -183,6 +192,5 @@ public class newTours {
         }
 
     }
-*/
 
 }

@@ -76,7 +76,7 @@ public class BookAFlightTest {
         billAddress1.sendKeys("1, Billing Address");
 
         // Enter Billing Address Complement
-        driver.findElement(By.name("billAddress2")).sendKeys("Billing Address Complement ");
+        driver.findElement(By.name("billAddress2")).sendKeys("Billing Address Complement");
 
         // Enter Billing City
         WebElement billCity = driver.findElement(By.name("billCity"));
