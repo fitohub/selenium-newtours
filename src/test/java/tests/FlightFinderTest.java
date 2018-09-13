@@ -12,38 +12,38 @@ import org.openqa.selenium.support.ui.Select;
 
 public class FlightFinderTest {
 
-    public static void flightDetails(WebDriver driver) {
+    public static void flightDetails(WebDriver driver, String str_passCount, String str_fromPort, String str_fromMonth, String str_fromDay, String str_toPort, String str_toMonth, String str_toDay) {
 
         // Select Quantity of Passengers
-        new Select(driver.findElement(By.name("passCount"))).selectByVisibleText("2");
+        new Select(driver.findElement(By.name("passCount"))).selectByVisibleText(str_passCount);
 
         // Select Departure City
-        new Select(driver.findElement(By.name("fromPort"))).selectByVisibleText("New York");
+        new Select(driver.findElement(By.name("fromPort"))).selectByVisibleText(str_fromPort);
 
         // Select Departure Month
-        new Select(driver.findElement(By.name("fromMonth"))).selectByVisibleText("September");
+        new Select(driver.findElement(By.name("fromMonth"))).selectByVisibleText(str_fromMonth);
 
         // Select Departure Day
-        new Select(driver.findElement(By.name("fromDay"))).selectByVisibleText("30");
+        new Select(driver.findElement(By.name("fromDay"))).selectByVisibleText(str_fromDay);
 
         // Select Arrival City
-        new Select(driver.findElement(By.name("toPort"))).selectByVisibleText("Paris");
+        new Select(driver.findElement(By.name("toPort"))).selectByVisibleText(str_toPort);
 
         // Select Arrival Month
-        new Select(driver.findElement(By.name("toMonth"))).selectByVisibleText("October");
+        new Select(driver.findElement(By.name("toMonth"))).selectByVisibleText(str_toMonth);
 
         // Select Arrival Day
-        new Select(driver.findElement(By.name("toDay"))).selectByVisibleText("25");
+        new Select(driver.findElement(By.name("toDay"))).selectByVisibleText(str_toDay);
 
     }
 
-    public static void flightPreferences(WebDriver driver) {
+    public static void flightPreferences(WebDriver driver, String str_svcClass, String str_airline) {
 
         // Set Service Class
-        driver.findElement(By.cssSelector("input[value='First']")).click();
+        driver.findElement(By.cssSelector("input[value='" + str_svcClass + "']")).click();
 
         // Select Airline
-        new Select(driver.findElement(By.name("airline"))).selectByVisibleText("Unified Airlines");
+        new Select(driver.findElement(By.name("airline"))).selectByVisibleText(str_airline);
 
     }
 }
